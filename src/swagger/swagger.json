@@ -2,7 +2,7 @@
     "openapi": "3.0.0",
     "info": {
       "title": "Rick and Morty",
-      "description": "API para CRUD de personagens do Rick and Morty",
+      "description": "API BFF Rick and Morty ",
       "version": "1.0.0"
     },
     "servers": [
@@ -245,62 +245,6 @@
           }
         }
       },
-      "/characters/update/{id}": {
-        "put": {
-          "summary": "Edit a character with the ID",
-          "description": "Route wich enables to edit a character with the ID.",
-          "tags": ["Characters"],
-          "security": [{ "bearerAuth": [] }],
-          "parameters": [
-            {
-              "name": "id",
-              "in": "path",
-              "description": "Needs character ID for search.",
-              "required": true
-            }
-          ],
-          "requestBody": {
-            "content": {
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/Character"
-                },
-                "examples": {
-                  "Character": {
-                    "value": {
-                      "name": "Rick Pickle",
-                      "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6jPJQG2SAtQdEoAbHYYPK7YYcHWrEbh1PHQ&usqp=CAU"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "responses": {
-            "401": {
-              "description": "Unauthorized"
-            },
-            "400": {
-              "description": "ID invalid or  complete all required text fields."
-            },
-            "206": {
-              "description": "Character not found with this ID."
-            },
-            "200": {
-              "description": "OK",
-              "content": {
-                "application/json": {
-                  "schema": {
-                    "type": "object",
-                    "$ref": "#/components/schemas/Character"
-                  }
-                }
-              }
-            }
-          }
-        }
-      },
-      
       "/characters/search": {
         "get": {
           "summary": "Search a character",
