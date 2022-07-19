@@ -15,7 +15,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/users", userRoute);
 app.use("/auth", authRoute);
-app.use("/character",characterRoute)
+app.use("/characters",characterRoute)
 
 
 app.listen(port, () => {
